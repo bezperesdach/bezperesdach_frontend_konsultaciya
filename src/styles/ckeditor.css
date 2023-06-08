@@ -1,0 +1,306 @@
+/* stylelint-disable selector-id-pattern */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ * CKEditor 5 (v36.0.1) content styles.
+ * Generated on Thu, 09 Feb 2023 14:42:43 GMT.
+ * For more information, check out https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/content-styles.html
+ */
+
+:root {
+  --ck-color-image-caption-background: hsl(0deg 0% 97%);
+  --ck-color-image-caption-text: hsl(0deg 0% 20%);
+  --ck-color-table-caption-background: hsl(0deg 0% 97%);
+  --ck-color-table-caption-text: hsl(0deg 0% 20%);
+  --ck-image-style-spacing: 1.5em;
+  --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
+}
+
+/* ----------------------------------------------------------------------------------
+---------------------------------custom styles -------------------------------------
+ ---------------------------------------------------------------------------------- */
+
+.ck-content .callout {
+  --border-color: rgb(16 112 238);
+
+  padding: 1.2em 2em;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  border-left: 10px solid var(--border-color);
+
+  /* margin: 1.5em 2em; */
+  margin: 36px 48px;
+  background: rgb(246 250 255);
+  box-shadow: 5px 5px 0 rgb(231 241 254);
+}
+
+.ck-content .callout .callout-important {
+  padding-right: 4px;
+  color: rgb(39 52 66 / 85%);
+  font-weight: 800;
+}
+
+/* ----------------------------------------------------------------------------------
+---------------------------------custom styles -------------------------------------
+ ---------------------------------------------------------------------------------- */
+
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-tiny {
+  font-size: 0.7em;
+}
+
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-small {
+  font-size: 0.85em;
+}
+
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-big {
+  font-size: 1.4em;
+}
+
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-huge {
+  font-size: 1.8em;
+}
+
+/* ckeditor5-image/theme/image.css */
+.ck-content .image {
+  display: table;
+  min-width: 50px;
+  margin: 36px auto;
+  clear: both;
+  text-align: center;
+}
+
+/* ckeditor5-image/theme/image.css */
+.ck-content .image img {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ckeditor5-image/theme/image.css */
+.ck-content .image-inline {
+  /*
+	 * Normally, the .image-inline would have "display: inline-block" and "img { width: 100% }" (to follow the wrapper while resizing).;
+	 * Unfortunately, together with "srcset", it gets automatically stretched up to the width of the editing root.
+	 * This strange behavior does not happen with inline-flex.
+	 */
+  display: inline-flex;
+  max-width: 100%;
+  align-items: flex-start;
+}
+
+/* ckeditor5-image/theme/image.css */
+.ck-content .image-inline picture {
+  display: flex;
+}
+
+/* ckeditor5-image/theme/image.css */
+.ck-content .image-inline picture,
+.ck-content .image-inline img {
+  max-width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+/* ckeditor5-image/theme/imagecaption.css */
+.ck-content .image > figcaption {
+  display: table-caption;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: rgb(233 240 253);
+  caption-side: bottom;
+  color: rgb(39 52 66);
+  font-size: calc((100vw - 300px) / (1440 - 300) * (16 - 14) + 14px);
+  outline-offset: -1px;
+  word-break: break-word;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-block-align-left,
+.ck-content .image-style-block-align-right {
+  max-width: calc(100% - var(--ck-image-style-spacing));
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-left,
+.ck-content .image-style-align-right {
+  clear: none;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-side {
+  max-width: 50%;
+  margin-left: var(--ck-image-style-spacing);
+  float: right;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-left {
+  margin-right: var(--ck-image-style-spacing);
+  float: left;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-right {
+  margin-left: var(--ck-image-style-spacing);
+  float: right;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-block-align-right {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-block-align-left {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content p + .image-style-align-left,
+.ck-content p + .image-style-align-right,
+.ck-content p + .image-style-side {
+  margin-top: 0;
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-inline.image-style-align-left,
+.ck-content .image-inline.image-style-align-right {
+  margin-top: var(--ck-inline-image-style-spacing);
+  margin-bottom: var(--ck-inline-image-style-spacing);
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-inline.image-style-align-left {
+  margin-right: var(--ck-inline-image-style-spacing);
+}
+
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-inline.image-style-align-right {
+  margin-left: var(--ck-inline-image-style-spacing);
+}
+
+/* ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized {
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized img {
+  width: 100%;
+}
+
+/* ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized > figcaption {
+  display: block;
+}
+
+/* ckeditor5-media-embed/theme/mediaembed.css */
+.ck-content .media {
+  display: block;
+  min-width: 15em;
+  margin: 0.9em 0;
+  clear: both;
+}
+
+/* ckeditor5-table/theme/table.css */
+.ck-content .table {
+  display: table;
+  margin: 0.9em auto;
+}
+
+/* ckeditor5-table/theme/table.css */
+.ck-content .table table {
+  width: 100%;
+  height: 100%;
+  border: 1px double hsl(0deg 0% 70%);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ckeditor5-table/theme/table.css */
+.ck-content .table table td,
+.ck-content .table table th {
+  min-width: 2em;
+  padding: 0.4em;
+  border: 1px solid hsl(0deg 0% 75%);
+}
+
+/* ckeditor5-table/theme/table.css */
+.ck-content .table table th {
+  background: hsl(0deg 0% 0% / 5%);
+  font-weight: bold;
+}
+
+/* ckeditor5-table/theme/table.css */
+.ck-content[dir="rtl"] .table th {
+  text-align: right;
+}
+
+/* ckeditor5-table/theme/table.css */
+.ck-content[dir="ltr"] .table th {
+  text-align: left;
+}
+
+/* ckeditor5-table/theme/tablecaption.css */
+.ck-content .table > figcaption {
+  display: table-caption;
+  padding: 0.6em;
+  background-color: var(--ck-color-table-caption-background);
+  caption-side: top;
+  color: var(--ck-color-table-caption-text);
+  font-size: 0.75em;
+  outline-offset: -1px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* ckeditor5-table/theme/tablecolumnresize.css */
+.ck-content .table .ck-table-resized {
+  table-layout: fixed;
+}
+
+/* ckeditor5-table/theme/tablecolumnresize.css */
+.ck-content .table table {
+  overflow: hidden;
+}
+
+/* ckeditor5-table/theme/tablecolumnresize.css */
+.ck-content .table td,
+.ck-content .table th {
+  position: relative;
+}
+
+/* ----------------------------------------------------------------------------------
+---------------------------------responsive styles-----------------------------------
+ ---------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+  .ck-content .callout {
+    margin: 36px 0;
+  }
+}
+
+@media screen and (max-width: 756px) {
+  .ck-content .image {
+    width: 100% !important;
+  }
+}

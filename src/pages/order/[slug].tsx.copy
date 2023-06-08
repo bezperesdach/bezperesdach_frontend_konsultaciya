@@ -1,0 +1,162 @@
+// import React, { useEffect, useState } from "react";
+// import dynamic from "next/dynamic";
+// import { useRouter } from "next/router";
+// import { GetServerSideProps, InferGetServerSidePropsType } from "next/types";
+// import { ParsedUrlQuery } from "querystring";
+// import { RECAPTCHA_SITE_KEY } from "@/utils/recaptcha";
+// import { getAverageRating, getOrderArticle } from "@/api/api";
+// import { shuffleArray } from "@/utils/utils";
+// import { OrderTerms } from "@/components/order-page/order-terms/order-terms";
+
+// import { UnauthorizedUserLayout } from "@/components/layouts/unauthorized-user-layout/unauthorized-user-layout";
+// import {
+//   getFilteredProjectType,
+//   getServiceDescription,
+//   getProjectType,
+//   getServiceName,
+//   typeDynamicOrder,
+//   getOrderServiceTerms,
+// } from "@/utils/order-form/form";
+// import { SEO } from "@/components/seo/seo";
+// import { NewOrderForm } from "@/components/forms/new-order-form/new-order-form";
+// import StructuredData from "@/components/structured-data/structured-data";
+
+// import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+
+// // const DynamicOrderProcess = dynamic(() => import("@/components/home-page/order-process/order-process").then((mod) => mod.OrderProcess));
+// // const DynamicSecurePayment = dynamic(() =>
+// //   import("@/components/home-page/secure-payment/secure-payment").then((mod) => mod.SecurePayment)
+// // );
+// // const DynamicContact = dynamic(() => import("@/components/home-page/contact/contact").then((mod) => mod.Contact));
+
+// // const DynamicReviewsBlock = dynamic(() => import("@/components/home-page/reviews-block/reviews-block").then((mod) => mod.ReviewsBlock));
+// import { OrderSeoDescription } from "@/components/order-page/order-seo-description/order-seo-description";
+// const DynamicWeAlsoHave = dynamic(() => import("@/components/order-page/we-also-have/we-also-have").then((mod) => mod.WeAlsoHave));
+
+// // import styles from "@/styles/pages/Order.module.css";
+
+// interface IParams extends ParsedUrlQuery {
+//   slug: string;
+// }
+
+// interface Props {
+//   slug: string;
+//   orderSeoArticle: OrderSeoArticle | null;
+//   filteredSlugs: [string, string][];
+//   orderServiceTerms: OrderServiceTerms | null;
+//   averageRating: ReviewsAverageRating | null;
+// }
+
+// export default function Order({
+//   slug,
+//   orderSeoArticle,
+//   filteredSlugs,
+//   orderServiceTerms,
+//   averageRating,
+// }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+//   const structuredData = {
+//     "@context": "http://schema.org/",
+//     "@type": "Product",
+//     name: getServiceName(slug),
+//     url: `https://bezperesdach.ru/order/${slug}`,
+//     image: "https://bezperesdach.ru/assets/logo_mini.png",
+//     description: getServiceDescription(slug),
+//     brand: "Безпересдач",
+//     ...(orderServiceTerms && {
+//       offers: {
+//         "@type": "Offer",
+//         priceCurrency: "RUB",
+//         price: orderServiceTerms.price,
+//         url: `https://bezperesdach.ru/order/${slug}`,
+//         availability: "http://schema.org/InStock",
+//         seller: {
+//           "@type": "Organization",
+//           name: "Безпересдач",
+//         },
+//       },
+//     }),
+//     ...(averageRating && {
+//       aggregateRating: {
+//         "@type": "AggregateRating",
+//         ratingValue: averageRating.ratingValue,
+//         bestRating: averageRating.bestRating,
+//         worstRating: averageRating.worstRating,
+//         ratingCount: averageRating.ratingCount,
+//       },
+//     }),
+//   };
+
+//   const router = useRouter();
+//   const [activeRoute, setActiveRoute] = useState("");
+//   const [previousRoute, setPreviousRoute] = useState(slug);
+
+//   useEffect(() => {
+//     const slug = router.query.slug as string;
+//     if (activeRoute) {
+//       setPreviousRoute(activeRoute);
+//     }
+//     setActiveRoute(slug);
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [router.query]);
+
+//   return (
+//     <UnauthorizedUserLayout>
+//       <StructuredData data={structuredData} />
+//       <SEO
+//         title={`${slug ? `${getProjectType(slug)} | Безпересдач` : "Оставить заявку | Безпересдач - онлайн-проект помощи в учёбе"}`}
+//         description={getServiceDescription(slug)}
+//         url={`https://bezperesdach.ru/order/${slug}`}
+//         image="https://bezperesdach.ru/assets/og_logo.png"
+//       />
+
+//       <GoogleReCaptchaProvider
+//         reCaptchaKey={RECAPTCHA_SITE_KEY}
+//         scriptProps={{
+//           async: false, // optional, default to false,
+//           defer: false, // optional, default to false
+//           appendTo: "head", // optional, default to "head", can be "head" or "body",
+//           nonce: undefined,
+//         }}
+//       >
+//         <NewOrderForm slug={slug} />
+//       </GoogleReCaptchaProvider>
+//       <OrderTerms orderServiceTerms={orderServiceTerms} activeRoute={activeRoute} previousRoute={previousRoute} />
+//       {/* <DynamicOrderProcess className={styles.order_process} /> */}
+//       {/* <DynamicSecurePayment /> */}
+//       {/* <DynamicReviewsBlock className={styles.reviews_block} /> */}
+//       <DynamicWeAlsoHave activeRoute={activeRoute} previousRoute={previousRoute} filteredSlugs={filteredSlugs} />
+//       <OrderSeoDescription
+//         activeRoute={activeRoute}
+//         previousRoute={previousRoute}
+//         orderSeoArticle={orderSeoArticle}
+//         orderServiceTerms={orderServiceTerms}
+//       />
+//       {/* <DynamicContact /> */}
+//     </UnauthorizedUserLayout>
+//   );
+// }
+
+// export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
+//   ctx.res.setHeader("Cache-Control", "public, s-maxage=86400, stale-while-revalidate=43200");
+
+//   const parsedQuery = ctx.query as IParams;
+
+//   if (typeDynamicOrder.get(parsedQuery.slug) === undefined) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   const result = await getOrderArticle(parsedQuery.slug);
+
+//   const orderServiceTermsResult = getOrderServiceTerms(parsedQuery.slug);
+//   const orderServiceTerms = orderServiceTermsResult ? orderServiceTermsResult.terms : null;
+
+//   const averageRating = await getAverageRating().then((data) => (data.errors ? null : data.data));
+
+//   const filteredSlugs = shuffleArray(getFilteredProjectType([parsedQuery.slug]));
+
+//   const article = result.errors ? null : result.data;
+
+//   return { props: { slug: parsedQuery.slug, orderSeoArticle: article, filteredSlugs, orderServiceTerms, averageRating } };
+// };

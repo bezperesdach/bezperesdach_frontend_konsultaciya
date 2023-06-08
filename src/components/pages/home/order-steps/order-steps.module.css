@@ -1,0 +1,55 @@
+.order_steps {
+  background-color: rgb(255 255 255);
+  color: rgb(39 52 67);
+}
+
+.order_steps_container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 36px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 16px;
+}
+
+.number {
+  margin-right: 8px;
+  color: rgb(17 112 238 / 50%);
+  font-weight: 700;
+}
+
+.text {
+  margin-top: 8px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@media screen and (min-width: 1024px) {
+  .step {
+    width: 33.3%;
+    flex-basis: 33.3%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .step {
+    width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .step {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

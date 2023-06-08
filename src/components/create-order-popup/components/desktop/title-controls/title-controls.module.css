@@ -1,0 +1,22 @@
+.title {
+  display: flex;
+  height: 36px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.title > p {
+  color: rgb(39 52 67);
+  font-weight: 500;
+}
+
+.button_container {
+  display: flex;
+  padding: unset;
+  border: unset;
+  margin: unset;
+  background-color: unset;
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.header_container {
+  padding-top: var(--navbar-height);
+
+  /* margin-top: 16px; */
+}
+
+.header_container > p {
+  margin-top: 8px;
+  color: rgb(39 52 67 / 80%);
+}
+
+@media scree and (min-width: 1025px) {
+  .header_container > ul {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 548px) {
+  .header_container {
+    text-align: start;
+  }
+}

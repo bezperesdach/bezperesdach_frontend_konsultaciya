@@ -1,0 +1,15 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 16px;
+  gap: 16px;
+}
+
+.button_container {
+  padding: unset;
+  border: unset;
+  margin: unset;
+  background-color: unset;
+  cursor: pointer;
+}

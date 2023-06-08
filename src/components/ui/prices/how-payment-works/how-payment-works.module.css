@@ -1,0 +1,81 @@
+.container {
+  padding: 24px 0;
+}
+
+.how_payment_works {
+  display: flex;
+  flex-direction: column;
+}
+
+.how_payment_works > h2 {
+  margin-bottom: 16px;
+}
+
+.how_payment_works > p {
+  margin-bottom: 24px;
+}
+
+.blue_bold {
+  color: rgb(15 99 208);
+  font-weight: 500;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 36px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  background-color: rgb(247 247 247);
+  gap: 16px;
+}
+
+.card > br {
+  margin-top: 16px;
+}
+
+.card > p {
+  color: rgb(39 53 68 / 80%);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.number {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(16 112 238);
+  color: rgb(255 255 255);
+  font-size: calc((100vw - 300px) / (1920 - 300) * (26 - 18) + 18px);
+  font-weight: 800;
+}
+
+@media screen and (min-width: 1280px) {
+  .how_payment_works > p {
+    width: 70%;
+    margin-bottom: 48px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    padding: 16px;
+  }
+
+  .number {
+    width: 24px;
+    height: 24px;
+  }
+}

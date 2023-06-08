@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px;
+  border-radius: 12px;
+  box-shadow: 0 0 1px 2px rgb(39 52 67 / 10%);
+}
+
+.divider {
+  width: 1px;
+  height: 80%;
+  margin-right: 4px;
+  margin-left: 4px;
+  background: rgb(39 52 68 / 30%);
+  content: " ";
+}
+
+.input {
+  width: 100%;
+  border: unset;
+}

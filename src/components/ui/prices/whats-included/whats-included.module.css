@@ -1,0 +1,67 @@
+.whats_included_container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: rgb(17 112 238);
+  color: rgb(255 255 255);
+}
+
+.whats_included {
+  display: flex;
+  flex-direction: column;
+}
+
+.whats_included > h2 {
+  padding-bottom: 24px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px 48px;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: rgb(255 255 255);
+  color: rgb(39 52 67);
+  gap: 24px;
+}
+
+.card > p {
+  color: rgb(39 52 67 /80%);
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 30%;
+    flex-basis: 30%;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .card {
+    width: 45%;
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    padding: 24px;
+  }
+
+  .card {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .cards {
+    padding: 24px 0;
+  }
+}

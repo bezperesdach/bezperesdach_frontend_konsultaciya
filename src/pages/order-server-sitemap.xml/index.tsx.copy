@@ -1,0 +1,17 @@
+import { GetServerSideProps } from "next";
+import { getServerSideSitemap, ISitemapField } from "next-sitemap";
+import { descriptionValueLabel } from "@/utils/order-form/form";
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  ctx.res.setHeader("Cache-Control", "public, s-maxage=432000, stale-while-revalidate=43200");
+
+  const fields: ISitemapField[] = Array.from(descriptionValueLabel).map(([slug]) => ({
+    loc: `https://bezperesdach.ru/order/${slug}`,
+    lastmod: new Date().toISOString(),
+  }));
+
+  return getServerSideSitemap(ctx, fields);
+};
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export default function Site() {}

@@ -1,0 +1,21 @@
+.date_picker {
+  display: flex;
+  height: calc(100% - 44px);
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project_type_container {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  border-radius: 15px;
+  background-color: rgb(247 247 247);
+  gap: 4px;
+}
+
+.bottom_buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}

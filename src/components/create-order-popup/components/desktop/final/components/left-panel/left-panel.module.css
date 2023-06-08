@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: rgb(247 247 247);
+  gap: 6px;
+}
+
+.request {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.advantage {
+  display: flex;
+  gap: 8px;
+}
+
+.check_mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgb(255 255 255);
+  box-shadow: 0 0 4px rgb(0 0 0 / 25%);
+}
+
+.header {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.expandable_text {
+  cursor: pointer;
+}
+
+.expandable_text:hover::after {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: 0;
+  display: block;
+  overflow: visible;
+  width: auto;
+  max-width: 100%;
+  padding: 8px;
+  border-radius: 15px;
+  background: rgb(255 255 255);
+  box-shadow: 0 2px 4px 0 rgb(39 52 68 / 28%);
+  color: rgb(39 52 68);
+  content: attr(data-text);
+  text-overflow: inherit;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.we_are_ready_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 8px;
+}

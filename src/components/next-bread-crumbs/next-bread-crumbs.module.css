@@ -1,0 +1,61 @@
+.bread_crumbs {
+  display: flex;
+  padding: 8px;
+  margin: unset;
+  color: rgb(39 52 67);
+  gap: 8px;
+  list-style-type: none;
+}
+
+@media screen and (min-width: 769px) {
+  .bread_crumbs > *:not(:last-child)::after {
+    padding-left: 8px;
+    color: rgb(16 112 238);
+    content: ">";
+    font-weight: 800;
+  }
+
+  .bread_crumbs > *:last-child {
+    color: rgb(39 52 67);
+  }
+
+  .bread_crumbs > *:not(:last-child) {
+    color: rgb(39 52 67 / 70%);
+    transition: all 0.35s ease-in-out;
+  }
+
+  .bread_crumbs > *:not(:last-child):hover {
+    color: rgb(16 112 238);
+  }
+
+  .bread_crumbs > *:not(:last-child) > a:focus-visible {
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px rgb(98 164 250);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bread_crumbs {
+    padding: 0 8px;
+    margin: unset;
+  }
+
+  .bread_crumbs > * {
+    padding: 16px 0;
+  }
+
+  .bread_crumbs > *:nth-last-child(2)::before {
+    padding-right: 8px;
+    color: rgb(16 112 238 / 50%);
+    content: "<";
+    font-weight: 800;
+  }
+
+  .bread_crumbs > *:not(:nth-last-child(2)) {
+    display: none;
+  }
+
+  .bread_crumbs > *:nth-last-child(2) a:active {
+    color: rgb(16 112 238);
+  }
+}

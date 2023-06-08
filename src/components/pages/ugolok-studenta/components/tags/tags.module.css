@@ -1,0 +1,39 @@
+.tags {
+  position: relative;
+  display: flex;
+  padding: 8px 0;
+  margin: unset;
+  color: rgb(255 255 255);
+  font-size: 14px;
+  gap: 8px;
+  list-style-type: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tags::-webkit-scrollbar {
+  display: none;
+}
+
+.tags::after {
+  position: sticky;
+  right: -2px;
+  display: flex;
+  height: auto;
+  align-items: center;
+  padding: 0 12px;
+  background: linear-gradient(90deg, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 100%) 60%);
+  content: "  ";
+}
+
+.tag {
+  padding: 8px;
+  border-radius: 16px;
+  background: rgb(17 112 238);
+}
+
+.tag > a,
+.tag > p {
+  white-space: nowrap;
+}

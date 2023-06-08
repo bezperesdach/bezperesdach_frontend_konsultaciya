@@ -1,0 +1,37 @@
+.final {
+  display: flex;
+  height: calc(100% - 44px);
+  flex-direction: column;
+  gap: 16px;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.left_panel {
+  position: relative;
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.right_panel {
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.separator {
+  width: 4px;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  margin: 0 16px;
+  background-color: rgb(39 52 67 / 15%);
+}

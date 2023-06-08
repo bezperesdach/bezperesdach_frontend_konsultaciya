@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project_type_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 15px;
+  background-color: rgb(247 247 247);
+  gap: 4px;
+}
+
+.text_area_container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.text_area {
+  height: 100%;
+  min-height: 124px;
+  padding: 8px;
+  border: unset;
+  border-radius: 8px;
+  color: rgb(39 52 67);
+  resize: none;
+}
+
+.text_area_label {
+  align-self: flex-end;
+  margin-top: 8px;
+  color: rgb(16 112 238);
+}
+
+.expected_price_container > p {
+  font-size: 16px;
+  font-weight: 600;
+  word-wrap: normal;
+}
+
+.expected_price {
+  display: flex;
+  min-width: 190px;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+  border: unset;
+  border-radius: 8px;
+  background-color: rgb(255 255 255);
+  color: rgb(39 52 67);
+  cursor: text;
+}
+
+.expected_price_input {
+  width: 100%;
+  padding: unset;
+  border: unset;
+  background: white;
+  color: rgb(39 52 67);
+  text-align: end;
+  vertical-align: top;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.expected_price_input::-webkit-outer-spin-button,
+.expected_price_input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+/* Firefox */
+.expected_price_input[type="number"] {
+  padding: unset;
+  appearance: textfield;
+}

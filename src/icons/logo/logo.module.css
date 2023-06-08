@@ -1,0 +1,16 @@
+/* #logo_link:focus #fill_focus {
+  fill: rgb(2 98 224);
+}
+
+#logo_link:focus {
+  filter: drop-shadow(0 0 1px rgb(39 52 67 / 25%));
+  outline: none;
+}
+
+#logo_link:hover #fill_focus {
+  fill: rgb(2 98 224);
+}
+
+#logo_link:hover {
+  filter: drop-shadow(0 0 1px rgb(39 52 67 / 25%));
+} */

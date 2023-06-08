@@ -1,0 +1,43 @@
+.inner {
+  position: relative;
+  display: flex;
+  max-width: 420px;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 8px;
+  gap: 16px;
+  isolation: isolate;
+}
+
+.title {
+  color: rgb(39 52 67 /80%);
+  font-size: calc((100vw - 300px) / (1920 - 300) * (22 - 18) + 18px);
+  font-weight: 500;
+  line-height: 150%;
+  text-align: center;
+}
+
+.subtitle {
+  color: rgb(39 52 67 /80%);
+  font-size: calc((100vw - 300px) / (1920 - 300) * (18 - 16) + 16px);
+  line-height: 115%;
+  text-align: center;
+}
+
+.image_container {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  width: 100%;
+}
+
+.button {
+  padding: 8px !important;
+}
+
+.image {
+  position: relative !important;
+  width: 100% !important;
+  height: unset !important;
+  object-fit: cover;
+}

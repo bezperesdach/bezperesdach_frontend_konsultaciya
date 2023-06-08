@@ -1,0 +1,61 @@
+.custom_buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 32px;
+}
+
+.avg_rating {
+  font-size: calc((100vw - 480px) / (1920 - 480) * (32 - 24) + 24px);
+}
+
+.avg_rating_score {
+  color: rgb(17 112 238);
+}
+
+.buttons_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.button_container {
+  width: 48px;
+  height: 48px;
+}
+
+.pages {
+  color: rgb(17 112 238);
+}
+
+.arrow_button {
+  height: 48px;
+  padding: unset;
+  border: unset;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.05s ease-in-out;
+}
+
+.arrow_button:active {
+  background-color: rgb(217 217 217);
+}
+
+.arrow_button_inactive {
+  background-color: transparent !important;
+  cursor: unset;
+  opacity: 0.5;
+}
+
+.arrow_button:focus-visible {
+  box-shadow: 0 0 0 4px rgb(255 255 255), 0 0 0 6px rgb(98 164 250);
+}
+
+@media screen and (max-width: 560px) {
+  .custom_buttons {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 16px;
+  }
+}

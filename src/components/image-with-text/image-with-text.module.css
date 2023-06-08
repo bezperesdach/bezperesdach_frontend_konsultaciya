@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.text {
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.container h3 {
+  font-weight: 700;
+}
+
+.image {
+  width: 32px;
+  height: auto;
+}

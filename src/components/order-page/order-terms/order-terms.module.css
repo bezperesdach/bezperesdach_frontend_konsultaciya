@@ -1,0 +1,31 @@
+.order_terms {
+  display: grid;
+  padding-top: 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 100px;
+}
+
+.colored_background {
+  --bg-color: rgb(102 36 130 / 100%);
+
+  margin-bottom: -1px;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 0 100vmax var(--bg-color);
+  clip-path: inset(0 -100vmax);
+  color: rgb(255 255 255);
+}
+
+@media screen and (max-width: 1023px) {
+  .order_terms {
+    padding-top: 100px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order_terms {
+    padding-top: 50px;
+    grid-template-columns: 1fr;
+    row-gap: 72px;
+  }
+}

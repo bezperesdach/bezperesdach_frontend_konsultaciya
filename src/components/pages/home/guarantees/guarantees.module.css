@@ -1,0 +1,100 @@
+.guarantees {
+  padding-top: 36px;
+  background-color: rgb(247 247 247);
+  color: rgb(39 52 67);
+}
+
+.guarantees_container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px;
+}
+
+.guarantees_container h2 {
+  margin-bottom: 36px;
+}
+
+.guarantees_cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.guarantees_card {
+  display: flex;
+  flex-direction: column;
+}
+
+.guarantees_card_container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  border-radius: 8px;
+  margin: 24px;
+  background-color: rgb(255 255 255);
+  gap: 16px;
+}
+
+.guarantees_card > p {
+  font-size: calc((100vw - 300px) / (1920 - 300) * (18 - 16) + 16px);
+}
+
+.title_container {
+  display: flex;
+  align-items: center;
+}
+
+.title_container > h3 {
+  font-size: calc((100vw - 300px) / (1920 - 300) * (20 - 16) + 16px);
+  font-weight: 600;
+}
+
+.icon_container {
+  width: 60px;
+  height: 48px;
+  border-radius: 8px;
+  margin-right: 8px;
+  background-color: rgb(243 243 243);
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: unset;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 1024px) {
+  .guarantees_card {
+    width: 33.3%;
+    flex-basis: 33.3%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .guarantees_cards {
+    justify-content: center;
+  }
+
+  .guarantees_card {
+    width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .guarantees_card {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .guarantees_container h2 {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .guarantees_card_container {
+    margin: unset;
+    margin-top: 24px;
+  }
+}

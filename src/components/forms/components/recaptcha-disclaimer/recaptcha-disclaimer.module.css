@@ -1,0 +1,34 @@
+.recaptcha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  font-size: 16px;
+}
+
+.recaptcha_logo_text {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 16px;
+}
+
+.recaptcha_logo {
+  width: 48px;
+  height: auto;
+}
+
+.agreements {
+  font-size: 12px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.recaptcha:hover > .agreements {
+  visibility: visible;
+}
+
+.link {
+  text-decoration: underline;
+}

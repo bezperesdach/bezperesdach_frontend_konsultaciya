@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding-right: 48px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.title {
+  font-size: calc((100vw - 300px) / (1920 - 300) * (28 - 20) + 20px);
+  font-weight: 700;
+}
+
+.description {
+  color: rgb(255 242 137);
+  font-size: calc((100vw - 300px) / (1920 - 300) * (36 - 28) + 28px);
+  font-weight: 900;
+}
+
+@media screen and (max-width: 1023px) {
+  .card {
+    padding-right: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    padding-right: 0;
+  }
+}

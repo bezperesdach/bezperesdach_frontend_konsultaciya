@@ -1,0 +1,102 @@
+.question_details {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  background-color: rgb(247 247 247);
+  transition: all 0.35s ease-out;
+}
+
+.question_summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  gap: 8px;
+  list-style: none;
+  transition: all 0.35s ease-out;
+  user-select: none;
+}
+
+.question_title_button {
+  padding: unset;
+  border: unset;
+  margin: unset;
+  background-color: transparent;
+  color: rgb(39 53 68);
+  cursor: pointer;
+  font-size: calc((100vw - 300px) / (1920 - 300) * (22 - 14) + 14px);
+  text-align: start;
+}
+
+.question_title_button:focus-visible {
+  border-radius: 8px;
+  box-shadow: 0 0 0 6px rgb(247 247 247), 0 0 0 8px rgb(98 164 250);
+}
+
+.card_button_icon {
+  flex-shrink: 0;
+  fill: rgb(255 255 255);
+  stroke: transparent;
+  stroke-width: unset;
+  transform: rotate(0deg);
+  transition: all 0.25s ease;
+}
+
+.card_button_icon_opened {
+  transform: rotate(-45deg);
+}
+
+.card_button_icon_opened > circle {
+  fill: rgb(105 164 242);
+}
+
+.card_button_icon_opened > path {
+  stroke: rgb(255 255 255);
+  stroke-width: 3;
+}
+
+.question_answer {
+  display: grid;
+  padding: 0 96px 0 48px;
+  font-size: calc((100vw - 300px) / (1920 - 300) * (22 - 14) + 14px);
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease-in-out;
+}
+
+.question_answer[aria-hidden="false"] {
+  padding: 0 96px 16px 48px;
+  grid-template-rows: 1fr;
+}
+
+.question_answer[aria-hidden="true"] > * {
+  visibility: hidden;
+}
+
+.question_answer[aria-hidden="false"] > * {
+  visibility: visible;
+}
+
+.question_answer > div {
+  overflow: hidden;
+}
+
+.question_answer[aria-hidden="true"] > div * {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 560px) {
+  .question_summary {
+    padding: 16px 24px;
+  }
+
+  .question_answer {
+    padding: 0 24px;
+  }
+
+  .question_answer[aria-hidden="false"] {
+    padding: 0 24px 16px;
+  }
+}

@@ -1,0 +1,191 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgb(247 247 247);
+  gap: 8px;
+}
+
+.container > p {
+  font-size: calc((100vw - 300px) / (1920 - 300) * (18 - 16) + 16px);
+  font-weight: 600;
+}
+
+.controls_container {
+  display: flex;
+  gap: 8px;
+}
+
+.volume_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.volume_container > label {
+  font-weight: 600;
+}
+
+.item > input[type="range"] {
+  width: 100%; /* Specific width is required for Firefox. */
+  height: 24px;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+.item > input[type="range"]::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+
+  /* border: 1px solid rgb(0 0 0); */
+  border-radius: 50%;
+  margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgb(255 255 255);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+.item > input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+
+  /* border: 1px solid rgb(0 0 0); */
+  border-radius: 50%;
+  margin-top: -8px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  appearance: none;
+  background: rgb(255 255 255);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+}
+
+.item > input[type="range"]::-ms-thumb {
+  width: 24px;
+  height: 24px;
+
+  /* border: 1px solid rgb(0 0 0); */
+  border-radius: 50%;
+  margin-top: -8px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  appearance: none;
+  background: rgb(255 255 255);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+}
+
+.item > input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  border: 0;
+  border-radius: 4px;
+  background: rgb(17 112 238 / 80%);
+  cursor: pointer;
+}
+
+.item > input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: rgb(17 112 238 / 40%);
+}
+
+.item > input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: rgb(17 112 238 / 80%);
+  cursor: pointer;
+}
+
+.item > input[type="range"]::-ms-track {
+  width: 100%;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: rgb(17 112 238 / 80%);
+  cursor: pointer;
+}
+
+.item > input[type="range"]::-ms-fill-lower {
+  width: 100%;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: rgb(17 112 238 / 80%);
+  cursor: pointer;
+}
+
+.item > input[type="range"]:focus::-ms-fill-lower {
+  background: rgb(17 112 238 / 40%);
+}
+
+.item > input[type="range"]::-ms-fill-upper {
+  width: 100%;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: rgb(17 112 238 / 80%);
+  cursor: pointer;
+}
+
+.item > input[type="range"]:focus::-ms-fill-upper {
+  background: rgb(17 112 238 / 40%);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: unset;
+  border-radius: 15px;
+  color: inherit;
+  cursor: pointer;
+  gap: 24px;
+  transition: all 0.25s ease-in-out;
+}
+
+.inactive {
+  background-color: rgb(255 255 255);
+}
+
+.active {
+  background-color: rgb(17 112 238);
+  color: rgb(255 255 255);
+  cursor: unset;
+}
+
+.unstyled_button {
+  display: none;
+  min-width: 36px;
+  height: auto;
+  padding: unset;
+  border: unset;
+  border-radius: 15px;
+  background-color: unset;
+  background-color: rgb(255 255 255);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.unstyled_button:active {
+  background-color: rgb(238 236 236);
+}
+
+@media screen and (max-width: 560px) {
+  .item {
+    padding: 8px 4px;
+    gap: 2px;
+  }
+
+  .unstyled_button {
+    display: block;
+  }
+}
