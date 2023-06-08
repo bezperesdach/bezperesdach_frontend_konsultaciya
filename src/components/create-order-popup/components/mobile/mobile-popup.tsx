@@ -28,9 +28,9 @@ export const MobilePopup = ({ shown }: Props) => {
   const stageTitle = useMemo(() => {
     switch (stage) {
       case "theme":
-        return "Какую работу нужно выполнить?";
+        return "С чем вам нужна помощь?";
       case "date":
-        return "Когда нужно сдать работу?";
+        return "Дата сдачи";
       case "additional":
         return "Дополнительные требования";
       case "final":
