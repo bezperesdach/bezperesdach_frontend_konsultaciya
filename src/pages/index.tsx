@@ -337,7 +337,7 @@ const Konsultaciya = () => {
 
 Konsultaciya.getLayout = function getLayout(page: React.ReactElement) {
   return (
-    <UnauthorizedUserLayout navbarProps={{ logoHref: "/konsultaciya", noMenuItems: true }} footerProps={{ hideNavigation: true }}>
+    <UnauthorizedUserLayout navbarProps={{ logoHref: "/", noMenuItems: true }} footerProps={{ hideNavigation: true }}>
       {page}
     </UnauthorizedUserLayout>
   );
