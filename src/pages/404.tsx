@@ -16,7 +16,7 @@ const NotFound = () => {
         image="https://bezperesdach.ru/assets/og_logo.png"
       />
 
-      <div className={`${styles.main} no_select`}>
+      <div className={`${styles.main} no_select`} style={{ overflow: "hidden" }}>
         {/* <div className={styles.main_container}> */}
         {/* <div className={styles.container}> */}
         <div className={styles.lamp_container}>
