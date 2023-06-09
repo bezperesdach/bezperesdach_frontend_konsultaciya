@@ -20,7 +20,11 @@ const Information = () => {
 };
 
 Information.getLayout = function getLayout(page: React.ReactElement) {
-  return <UnauthorizedUserLayout>{page}</UnauthorizedUserLayout>;
+  return (
+    <UnauthorizedUserLayout navbarProps={{ logoHref: "/", noMenuItems: true }} footerProps={{ hideNavigation: true }}>
+      {page}
+    </UnauthorizedUserLayout>
+  );
 };
 
 export default Information;
