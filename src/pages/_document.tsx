@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
-import { GOOGLE_TAG_MANAGER_ID } from "@/utils/google-tag-manager";
 import { isDevelopment } from "@/utils/utils";
 import { YANDEX_METRIKA_ID } from "@/utils/yandex-metrika";
-
-// const VK_ADS_ID = process.env.NEXT_PUBLIC_VK_ADS_ID;
 
 const analyticsEnabled = !isDevelopment;
 
@@ -44,20 +41,6 @@ export default function Document() {
 
         {analyticsEnabled && (
           <Script
-            id="google-tag-manager"
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${GOOGLE_TAG_MANAGER_ID}');`,
-            }}
-          />
-        )}
-
-        {analyticsEnabled && (
-          <Script
             id="yandex-metrica"
             strategy="lazyOnload"
             dangerouslySetInnerHTML={{
@@ -77,17 +60,6 @@ export default function Document() {
           />
         )}
 
-        {/* {analyticsEnabled && (
-          <Script
-            id="vk-pixel"
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src='https://vk.com/js/api/openapi.js?169',t.onload=function(){VK.Retargeting.Init("${VK_ADS_ID}"),VK.Retargeting.Hit()},document.head.appendChild(t)})();`,
-            }}
-          />
-        )} */}
-
         {analyticsEnabled && (
           <noscript>
             <img
@@ -95,13 +67,6 @@ export default function Document() {
               style={{ position: "absolute", left: "-9999px" }}
               alt="яндекс метрика"
             />
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-            {/* <img src={`https://vk.com/rtrg?p=${VK_ADS_ID}`} style={{ position: "fixed", left: "-999px" }} alt="" /> */}
           </noscript>
         )}
       </body>
